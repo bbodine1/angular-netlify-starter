@@ -14,6 +14,7 @@ import 'rxjs/add/operator/mergeMap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  implements OnInit {
+  appName = 'Angular Blah';
 
   constructor(
     private router: Router,
@@ -22,7 +23,6 @@ export class AppComponent  implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.titleService.setTitle('My awesome app');
     this.router.events
       .filter((event) => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
@@ -32,6 +32,10 @@ export class AppComponent  implements OnInit {
       })
       .filter((route) => route.outlet === 'primary')
       .mergeMap((route) => route.data)
-      .subscribe((event) => this.titleService.setTitle(event['title']));
+      .subscribe((event) => this.titleService.setTitle(
+        event['title'] + ' | Angular Netlify'
+      )
+    );
   }
+
 }
