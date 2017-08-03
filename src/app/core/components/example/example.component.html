@@ -2,24 +2,11 @@
 
 <h2>{{ name }} Page</h2>
 
+<p>This is a simple starter app for Netlify using Angular. It includes routing.</p>
 
+<img src="./assets/angular-logo.svg">
 
 <nav>
   <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
   <a routerLink="/about" routerLinkActive="active">About</a>
 </nav>
-
-<form name="contact" action="thank-you" netlify>
-  <p>
-    <label>Your Name: <input type="text" name="name"></label>
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email"></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
